@@ -57,8 +57,8 @@ public class RegisterController {
 //            return "redirect:/register/add";
 //        }
 //        userService.saveUser(userDto);
-
-        return "register/registerInfo";
+//          "register/registerInfo";
+        return "login/loginForm";
     }
 
     private boolean isValid(UserDto userDto) {

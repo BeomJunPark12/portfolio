@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ page import="java.net.URLDecoder"%>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -16,6 +15,9 @@
     <div class="title">회원가입</div>
     <div id="msg" class="msg">
         <form:errors path="id"/>
+        <form:errors path="password"/>
+        <form:errors path="name"/>
+        <form:errors path="email"/>
     </div>
     <label for="">아이디</label>
     <input  class="input-field" type="text" name="id" placeholder="아이디">
@@ -31,10 +33,11 @@
 <script>
     function formCheck(frm) {
         let msg ='';
-        if(frm.id.value.length<3) {
+        if(frm.id.value.length<2) {
             setMessage('id의 길이는 3이상이어야 합니다.', frm.id);
             return false;
         }
+
         return true;
     }
 

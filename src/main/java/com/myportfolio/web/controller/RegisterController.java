@@ -56,8 +56,10 @@ public class RegisterController {
 //
 //            return "redirect:/register/add";
 //        }
-//        userService.saveUser(userDto);
 //          "register/registerInfo";
+
+        userService.saveUser(userDto);
+
         return "login/loginForm";
     }
 

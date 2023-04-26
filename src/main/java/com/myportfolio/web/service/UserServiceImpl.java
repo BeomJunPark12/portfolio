@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService{
     public int saveUser(UserDto userDto) throws Exception {
         return userDao.insertUser(userDto);
     }
+
+    @Override
+    public UserDto findUser(String id) throws Exception {
+        return userDao.select(id);
+    }
 }

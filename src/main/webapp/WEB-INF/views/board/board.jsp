@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <link rel="stylesheet" href="<c:url value='/css/board.css'/>">
+    <link rel="stylesheet" href="<c:url value='/css/menu.css'/>">
     <title>board</title>
 </head>
 <body>
@@ -20,17 +21,19 @@
 
 </script>
 <div class="topnav">
-    <a class="active" href="<c:url value='/'/>">Home</a>
-    <a href="<c:url value='/board/list'/>">게시판</a>
-    <a href="<c:url value='${loginOutLink}'/>">${loginOut}</a>
-    <a href="<c:url value='/register/add'/>">회원가입</a>
+    <ul>
+        <li><a class="active" href="<c:url value='/'/>">Home</a></li>
+        <li><a href="<c:url value='/board/list'/>">게시판</a></li>
+        <li><a href="<c:url value='${loginOutLink}'/>">${loginOut}</a></li>
+        <li><a href="<c:url value='/register/add'/>">회원가입</a></li>
+    </ul>
 </div>
 <div class="container">
 <h2>게시물 ${mode == "new" ? "글쓰기" : "읽기"}</h2>
 <form action="" id="form" class="frm">
     <input type="hidden" name="bno" value="${boardDto.bno}">
-    <input type="text" name="title" value="<c:out value='${boardDto.title}'/>" ${mode == "new" ? '' : 'readonly="readonly"'}>
-    <textarea name="content" id="" cols="30" rows="10" ${mode == "new" ? '' : 'readonly="readonly"'}><c:out value="${boardDto.content}"/></textarea>
+    <input type="text" name="title" value="<c:out value='${boardDto.title}'/>" ${mode == "new" ? '' : 'readonly="readonly"'} placeholder="제목">
+    <textarea name="content" id="" cols="30" rows="10" ${mode == "new" ? '' : 'readonly="readonly"'} placeholder="내용"><c:out value="${boardDto.content}"/></textarea>
     <c:if test="${mode eq 'new'}">
         <button type="button" id="writeBtn" class="btn">등록</button>
     </c:if>

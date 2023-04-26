@@ -23,5 +23,9 @@
         <li><a href="<c:url value='/register/add'/>">회원가입</a></li>
     </ul>
 </div>
+<br>
+메인 페이지!!!
+메인 페이지!!!
+메인 페이지!!!
 </body>
 </html>

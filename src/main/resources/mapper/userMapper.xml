@@ -7,4 +7,11 @@
         insert into user_info (id, password, name, email, reg_date)
         values (#{id}, #{password}, #{name}, #{email}, now())
     </insert>
+
+    <select id="select" parameterType="String" resultType="UserDto">
+        SELECT * from user_info
+        WHERE id = #{id}
+    </select>
+
+
 </mapper>
